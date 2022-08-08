@@ -33,8 +33,9 @@ function onBtnStartClick() {
   const timerId = setInterval(() => {
     const deltaTime = flatPickr.selectedDates[0].getTime() - Date.now();
 
-    if (deltaTime < 1000) {
+    if (deltaTime < 0) {
       clearInterval(timerId);
+      disabledBtn(false);
       return;
     }
     const convertTime = convertMs(deltaTime);
