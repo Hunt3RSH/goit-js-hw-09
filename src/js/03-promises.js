@@ -16,7 +16,7 @@ function formValue(e) {
       if (amount === counter) {
         clearInterval(setIntervalId);
       } else {
-        counter += 1;
+        counter++;
         createPromise(counter, delay)
           .then(({ position, delay }) => {
             Notiflix.Notify.success(
