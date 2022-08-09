@@ -36,11 +36,13 @@ function onBtnStartClick() {
     if (deltaTime < 0) {
       clearInterval(timerId);
       disabledBtn(false);
+      dіsableInput(false);
       return;
     }
     const convertTime = convertMs(deltaTime);
     updateTime(convertTime);
     disabledBtn(true);
+    dіsableInput(true);
   }, 1000);
 }
 
@@ -76,4 +78,8 @@ function addLeadingZero(value) {
 
 function disabledBtn(value) {
   refs.startBtn.disabled = value;
+}
+
+function dіsableInput(value) {
+  refs.inputPicker.disabled = value;
 }
